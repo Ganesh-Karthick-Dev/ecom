@@ -152,7 +152,7 @@ export function HeroCarousel() {
           </div>
         </div>
 
-        <div className="pointer-events-none absolute inset-x-0 bottom-4 z-10 sm:bottom-5 lg:bottom-6">
+        <div className="pointer-events-none absolute inset-x-0 bottom-5 z-10 hidden md:block lg:bottom-6">
           <div className="mx-auto flex max-w-[1500px] flex-col items-center gap-3 px-4 sm:px-6 lg:flex-row lg:items-end lg:justify-between lg:px-8 xl:px-12">
             <div className="pointer-events-auto inline-flex items-center gap-2 rounded-full bg-white/88 px-3 py-2 shadow-[0_16px_34px_rgba(15,23,42,0.12)] backdrop-blur-sm">
               {heroSlides.map((slide, index) => {
@@ -210,3 +210,4 @@ export function HeroCarousel() {
     </section>
   );
 }
+

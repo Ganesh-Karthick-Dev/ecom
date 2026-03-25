@@ -32,6 +32,7 @@ function CartDrawer({ open, onClose, cartCount }: { open: boolean; onClose: () =
     if (open) {
       document.body.style.overflow = "hidden";
       document.documentElement.style.overflow = "hidden";
+      document.documentElement.setAttribute("data-scroll-locked", "true");
     }
 
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -45,6 +46,7 @@ function CartDrawer({ open, onClose, cartCount }: { open: boolean; onClose: () =
     return () => {
       document.body.style.overflow = previousBodyOverflow;
       document.documentElement.style.overflow = previousHtmlOverflow;
+      document.documentElement.removeAttribute("data-scroll-locked");
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [open, onClose]);
@@ -60,7 +62,7 @@ function CartDrawer({ open, onClose, cartCount }: { open: boolean; onClose: () =
         }`}
       />
 
-      <aside
+      <aside data-lenis-prevent
         className={`absolute inset-y-0 right-0 flex w-[88vw] max-w-[390px] flex-col bg-white shadow-[-18px_0_44px_rgba(15,23,42,0.16)] transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] md:max-w-[430px] ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
@@ -163,3 +165,4 @@ export function useCartDrawer() {
 
   return context;
 }
+

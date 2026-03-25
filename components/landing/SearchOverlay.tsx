@@ -225,7 +225,7 @@ export function SearchOverlay({
           className="search-surface-enter fixed inset-x-0 bottom-0 z-[60] hidden overflow-hidden bg-[linear-gradient(180deg,#ffffff,#f7faf6)] md:block"
           style={{ top: desktopTop }}
         >
-          <div className="mx-auto h-full max-w-[1560px] overflow-y-auto px-5 pb-8 pt-6 sm:px-6 lg:px-8">
+          <div data-lenis-prevent className="mx-auto h-full max-w-[1560px] overflow-y-auto px-5 pb-8 pt-6 sm:px-6 lg:px-8">
             <SearchPanelBody query={query} results={results} onChipClick={onChipClick} onClose={onClose} />
           </div>
         </div>
@@ -243,7 +243,7 @@ export function SearchOverlay({
           className="search-surface-enter fixed left-1/2 z-[60] w-[calc(100vw-24px)] max-w-[430px] -translate-x-1/2 overflow-hidden rounded-[1rem] border border-[color:var(--line)] bg-[linear-gradient(180deg,#ffffff,#f8faf7)] shadow-[0_24px_44px_rgba(15,23,42,0.16)]"
           style={{ top: mobileTop + 8 }}
         >
-          <div className="max-h-[62vh] overflow-y-auto px-4 pb-4 pt-4">
+          <div data-lenis-prevent className="max-h-[62vh] overflow-y-auto px-4 pb-4 pt-4">
             <SearchPanelBody compact query={query} results={results} onChipClick={onChipClick} onClose={onClose} />
           </div>
         </div>
@@ -251,3 +251,4 @@ export function SearchOverlay({
     </>
   );
 }
+

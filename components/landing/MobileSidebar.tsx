@@ -66,6 +66,7 @@ export function MobileSidebar({ open, onClose }: MobileSidebarProps) {
     if (open) {
       document.body.style.overflow = "hidden";
       document.documentElement.style.overflow = "hidden";
+      document.documentElement.setAttribute("data-scroll-locked", "true");
     }
 
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -79,6 +80,7 @@ export function MobileSidebar({ open, onClose }: MobileSidebarProps) {
     return () => {
       document.body.style.overflow = previousBodyOverflow;
       document.documentElement.style.overflow = previousHtmlOverflow;
+      document.documentElement.removeAttribute("data-scroll-locked");
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [open, onClose]);
@@ -99,7 +101,7 @@ export function MobileSidebar({ open, onClose }: MobileSidebarProps) {
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <aside className="relative flex h-full flex-col overflow-hidden border-r border-[color:var(--line)] bg-white shadow-[0_24px_64px_rgba(33,77,58,0.18)]">
+        <aside data-lenis-prevent className="relative flex h-full flex-col overflow-hidden border-r border-[color:var(--line)] bg-white shadow-[0_24px_64px_rgba(33,77,58,0.18)]">
           <button
             type="button"
             aria-label="Close menu"
@@ -111,7 +113,7 @@ export function MobileSidebar({ open, onClose }: MobileSidebarProps) {
             <X className="size-4.5" strokeWidth={2.2} />
           </button>
 
-          <div className="flex-1 overflow-y-auto">
+          <div data-lenis-prevent className="flex-1 overflow-y-auto">
             <div className="px-5 pb-5 pt-4">
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[color:var(--muted)]">Browse menu</p>
             </div>
@@ -122,7 +124,7 @@ export function MobileSidebar({ open, onClose }: MobileSidebarProps) {
               open={openSection === "category"}
               onToggle={() => setOpenSection((current) => (current === "category" ? null : "category"))}
             >
-              <div className="max-h-[310px] overflow-y-auto px-5 pb-5 pr-3">
+              <div data-lenis-prevent className="max-h-[310px] overflow-y-auto px-5 pb-5 pr-3">
                 <div className="grid grid-cols-3 gap-x-3 gap-y-5">
                   {categories.map((category) => {
                     const Icon = iconMap[category.icon];
@@ -222,3 +224,4 @@ export function MobileSidebar({ open, onClose }: MobileSidebarProps) {
     </div>
   );
 }
+

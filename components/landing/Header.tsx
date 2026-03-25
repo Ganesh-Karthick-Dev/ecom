@@ -58,6 +58,7 @@ export function Header() {
 
     document.body.style.overflow = "hidden";
     document.documentElement.style.overflow = "hidden";
+    document.documentElement.setAttribute("data-scroll-locked", "true");
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -75,6 +76,7 @@ export function Header() {
     return () => {
       document.body.style.overflow = previousBodyOverflow;
       document.documentElement.style.overflow = previousHtmlOverflow;
+      document.documentElement.removeAttribute("data-scroll-locked");
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("resize", handleResize);
     };
@@ -218,3 +220,4 @@ export function Header() {
     </>
   );
 }
+
