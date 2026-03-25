@@ -33,8 +33,8 @@ function SizeChip({ label, active }: { label: string; active?: boolean }) {
 export function ProductCard({ product }: { product: Product }) {
   return (
     <article className="flex h-full min-h-[30rem] flex-col overflow-hidden rounded-[1.05rem] border border-[color:var(--line)] bg-white shadow-[0_14px_34px_rgba(33,77,58,0.05)] transition-shadow duration-200 hover:shadow-[0_20px_38px_rgba(33,77,58,0.08)]">
-      <div className="h-56 w-full border-b border-[color:var(--line)] sm:h-60">
-        <ProductMockup tone={product.tone} className="h-full w-full" />
+      <div className="aspect-[2400/1792] w-full border-b border-[color:var(--line)] bg-[#f7f2ea]">
+        <ProductMockup tone={product.tone} imageKey={product.name} className="h-full w-full" />
       </div>
       <div className="flex flex-1 flex-col px-4 py-4 sm:px-5 sm:py-5">
         <div>

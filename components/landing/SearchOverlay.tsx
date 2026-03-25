@@ -61,8 +61,8 @@ function SearchProductCard({ product, compact = false }: { product: SearchCatalo
 
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-[1rem] border border-[color:var(--line)] bg-white shadow-[0_16px_34px_rgba(33,77,58,0.06)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_22px_40px_rgba(33,77,58,0.1)]">
-      <div className={compact ? "h-32 w-full border-b border-[color:var(--line)]" : "h-44 w-full border-b border-[color:var(--line)]"}>
-        <ProductMockup tone={product.tone} className="h-full w-full" />
+      <div className="aspect-[2400/1792] w-full border-b border-[color:var(--line)] bg-[#f7f2ea]">
+        <ProductMockup tone={product.tone} imageKey={product.name} className="h-full w-full" />
       </div>
       <div className={compact ? "flex flex-1 flex-col p-3" : "flex flex-1 flex-col p-4"}>
         <div className="flex items-start justify-between gap-3">
@@ -251,4 +251,3 @@ export function SearchOverlay({
     </>
   );
 }
-

@@ -1,12 +1,12 @@
-import { ArrowRight } from "lucide-react";
+﻿import { ArrowRight } from "lucide-react";
 
 import { AboutMockup } from "@/components/landing/mock-visuals";
 import { SectionIntro, SectionShell } from "@/components/landing/section-shell";
 
 const stats = [
-  { label: "200+", detail: "Products across pantry, gifting, and routine-based collections" },
-  { label: "20+", detail: "Producer partnerships designed to support a sourcing story" },
-  { label: "100%", detail: "Single-color icon system and editable visual placeholders" },
+  { label: "200+", detail: "Pantry, millet, gifting, and routine-led product options across the range" },
+  { label: "20+", detail: "Curated blends and staples designed for modern everyday cooking" },
+  { label: "100%", detail: "Ingredient-led visual storytelling with a clean, product-first presentation" },
 ];
 
 export function AboutSection() {
@@ -16,11 +16,11 @@ export function AboutSection() {
         <div>
           <SectionIntro
             title="About Us"
-            subtitle="This section keeps the familiar trust-building role of the reference, but becomes more editorial and easier to update."
+            subtitle="A trust-building story section that feels warmer, cleaner, and more premium than a generic brand block."
             center={false}
           />
           <p className="mt-6 max-w-xl text-base leading-8 text-[color:var(--muted)]">
-            This placeholder brand story gives you an image slot, a warm brand voice, and clean proof points without locking the design to final photography too early.
+            Built around millet blends, pantry staples, and ready-to-cook essentials, this section helps the brand feel rooted in everyday family wellness while still looking polished enough for a modern ecommerce launch.
           </p>
           <div className="mt-8">
             <button
