@@ -113,29 +113,16 @@ export function ProductMockup({
 
 export function PromoMockup() {
   return (
-    <div className={`${visualCardClass} bg-white`}>
-      <div className="relative min-h-[300px] overflow-hidden bg-[#f6f2e9] sm:min-h-[380px] lg:min-h-[470px]">
+    <div className={`${visualCardClass} p-0`}>
+      <div className="relative aspect-[2400/1792] w-full overflow-hidden bg-white">
         <Image
           src="/images/landingpage/combo1.png"
           alt="Combo offer banner"
           fill
-          sizes="(max-width: 1024px) 100vw, 1280px"
-          className="object-cover opacity-25 blur-xl scale-110"
+          sizes="(max-width: 1280px) 100vw, 1280px"
+          className="object-contain"
           draggable={false}
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.08))]" />
-        <div className="absolute inset-0 p-3 sm:p-5 lg:p-6">
-          <div className="relative h-full w-full">
-            <Image
-              src="/images/landingpage/combo1.png"
-              alt="Combo offer banner"
-              fill
-              sizes="(max-width: 1024px) 100vw, 1280px"
-              className="object-contain"
-              draggable={false}
-            />
-          </div>
-        </div>
       </div>
     </div>
   );
@@ -143,29 +130,16 @@ export function PromoMockup() {
 
 export function AboutMockup() {
   return (
-    <div className={`${visualCardClass} bg-white p-0`}>
-      <div className="relative min-h-[360px] overflow-hidden rounded-[1.45rem] bg-[#f4efe6] sm:min-h-[420px] lg:min-h-[480px]">
+    <div className={`${visualCardClass} p-0`}>
+      <div className="relative aspect-[2752/1536] w-full overflow-hidden bg-white">
         <Image
           src="/images/landingpage/harpi.png"
           alt="Harpi product range"
           fill
           sizes="(max-width: 1024px) 100vw, 560px"
-          className="object-cover opacity-22 blur-xl scale-105"
+          className="object-contain"
           draggable={false}
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.16),rgba(255,255,255,0.08))]" />
-        <div className="absolute inset-0 p-3 sm:p-4 lg:p-5">
-          <div className="relative h-full w-full">
-            <Image
-              src="/images/landingpage/harpi.png"
-              alt="Harpi product range"
-              fill
-              sizes="(max-width: 1024px) 100vw, 560px"
-              className="object-contain"
-              draggable={false}
-            />
-          </div>
-        </div>
       </div>
     </div>
   );
